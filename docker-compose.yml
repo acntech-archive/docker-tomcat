@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  acntech_tomcat8:
+    build: .
+    image: acntech/tomcat:8.5.6
+    container_name: acntech-tomcat8
+    hostname: tomcat8.acntech.internal
+    ports:
+      - "8080:8080"
