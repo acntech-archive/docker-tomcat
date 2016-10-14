@@ -1,2 +1,2 @@
-# docker-tomcat8
-Docker image with Tomcat 8, based on the acntech/jre8 image
+# docker-tomcat
+Docker image with Apache Tomcat, based on the acntech/jre image
