@@ -1,4 +1,4 @@
-FROM acntech/jre:1.8.0_101
+FROM acntech/jre:1.8.0_101-alpine
 MAINTAINER Thomas Johansen "thomas.johansen@accenture.com"
 
 
@@ -7,7 +7,7 @@ ENV CATALINA_HOME /opt/tomcat/default
 ENV PATH $PATH:${CATALINA_HOME}/bin
 
 
-RUN apt-get update && apt-get -y upgrade
+RUN apk update && apk upgrade && apk add gnupg
 
 RUN wget --no-cookies --no-check-certificate "https://www.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz" -O /tmp/tomcat.tar.gz
 RUN wget --no-cookies --no-check-certificate "https://www.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz.asc" -O /tmp/tomcat.tar.gz.asc
